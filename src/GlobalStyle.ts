@@ -10,5 +10,6 @@ export const Root = createGlobalStyle`
         --primary-red: #f73636;
         --secondary-red: #ff4646;
         --primary-text-color: #e8e8e8;
+        font-size: 14px;
     }
 `;

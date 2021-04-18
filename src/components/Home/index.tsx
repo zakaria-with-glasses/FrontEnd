@@ -1,34 +1,8 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
-import { Grid, Sidenav, Separator, EdButton } from "./styles";
-import Post from "../Post";
+import React from "react";
+import { ActiveBlock } from "./PostBlock";
 
-const Index = () => {
-  const [Logged, setLogged] = useState(true);
-  if (!Logged) {
-    return <Redirect to="/login" />;
-  } else {
-    return (
-      <Grid>
-        <Sidenav>
-          <EdButton href="/"></EdButton>
-          <Separator></Separator>
-          <EdButton></EdButton>
-          <EdButton></EdButton>
-          <EdButton></EdButton>
-          <EdButton></EdButton>
-          <EdButton></EdButton>
-          <EdButton></EdButton>
-          <EdButton></EdButton>
-          <EdButton></EdButton>
-          <Separator></Separator>
-          <EdButton></EdButton>
-          <EdButton></EdButton>
-        </Sidenav>
-        <Post></Post>
-      </Grid>
-    );
-  }
+const Index: React.FC = () => {
+  return <ActiveBlock user="zakaria" />;
 };
 
 export default Index;

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Header, Body, Box, Text, Logo, Pack, List, Login } from "./styles";
 import { Link } from "react-router-dom";
-import logo from "../../Assets/logo.svg";
+import logo from "../../Assets/afk.svg";
 let index: React.FC = () => {
   return (
     <Fragment>
@@ -9,7 +9,7 @@ let index: React.FC = () => {
         <div style={{ display: "flex" }}>
           <img src={logo} alt="LOGO" />
           <Logo>
-            <span>ACELIFE</span>
+            <span>pyrite</span>
           </Logo>
         </div>
         <Pack>
