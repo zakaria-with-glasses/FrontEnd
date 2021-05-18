@@ -13,7 +13,7 @@ let index: React.FC = () => {
           </Logo>
         </div>
         <Pack>
-          <List>
+          <React.Fragment>
             <List>
               <Link to="#">INTRO</Link>
             </List>
@@ -26,14 +26,14 @@ let index: React.FC = () => {
             <List>
               <Link to="#">TEAM</Link>
             </List>
-          </List>
+          </React.Fragment>
         </Pack>
         <Login>Log In</Login>
       </Header>
       <Body>
         <Box>
           <Text>
-            <h1>Upgrade your Mentality</h1>
+            Upgrade your Mentality
           </Text>
         </Box>
       </Body>

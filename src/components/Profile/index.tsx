@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
+
 import {
   Bio,
   Upper,
@@ -16,7 +16,7 @@ import pic from "./profile.jpg";
 
 var sub = "Follow";
 const post = document.getElementById("post");
-const Index = () => {
+const Index: React.FC = () => {
   const [sub, setSub] = useState("Follow");
   return (
     <Wrapper>
@@ -25,7 +25,7 @@ const Index = () => {
           <Picture src={pic} />
           <Name>
             Hi! Im Zakaria Harira
-            <center>
+            <div>
               <Bio>
                 im a young programmer my career started before i had 10 then i
                 started at 10 i have 4 years of expirience +1 years of basics
@@ -35,7 +35,7 @@ const Index = () => {
                 ザカリア#4279 # @ziko_dev. wish y'all a happy expirence here
                 with us , Have a nice day ❤️️
               </Bio>
-            </center>
+            </div>
           </Name>
           <Button
             onClick={() => {
