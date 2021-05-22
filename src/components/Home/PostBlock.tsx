@@ -28,45 +28,47 @@ interface User{
   }
 }
 
+
 const Display = (Page: number) => {
+  //initializing StateVariables And Sockets
   const [loading, setLoading] = useState(true);
   const [Posts, setPosts] = useState([]);
   const [hasMore, setMore] = useState(false);
-  useEffect(() => {
-    setLoading(true);
-    axios
-      .get("http://localhost:4000/", {
-        params: {
-          page: Page,
-        },
-      })
-      .then((res) => {
-        setPosts((prevpage) => {
-          return [
-            ...new Set([
-              ...prevpage,
-              res.data.first,
-              res.data.second,
-              res.data.third,
-            ]),
-          ];
-        });
-        setMore(res.data > 0);
-        console.log(hasMore);
-        setLoading(false);
-      })
-      .catch((e) => {
-        console.error(e);
-      });
-  }, [Page, hasMore]);
+
+  // useEffect(() => {
+  //   setLoading(true);
+  //   /*axios
+  //     .get("http://localhost:4000/", {
+  //       params: {
+  //         page: Page,
+  //       },
+  //     })
+  //     .then((res) => {
+  //       setPosts((prevpage) => {
+  //         return [
+  //           ...new Set([
+  //             ...prevpage,
+  //             res.data.first,
+  //             res.data.second,
+  //             res.data.third,
+  //           ]),
+  //         ];
+  //       });
+  //       setMore(res.data > 0);
+  //       console.log(hasMore);
+  //       setLoading(false);
+  //     })
+  //     .catch((e) => {
+  //       console.error(e);
+  //     });*/
+  // }, [Page, hasMore]);
   return { Posts, setPosts,loading, setLoading,hasMore, setMore};
 };
 
 export let ActiveBlock: React.FC<User> = ({ user, children }) => {
   const breakpoints = {
     desktop: "(min-width: 1025px)",
-    tablet: "(min-width: 768px) and (max-width: 1024px)",
-    phone: "(max-width: 767px)",
+    phone: "(max-width: 1024px)",
   };
   const isDesktop = useMediaQuery({ query: breakpoints.desktop });
   const isphone = useMediaQuery({ query: breakpoints.phone });
